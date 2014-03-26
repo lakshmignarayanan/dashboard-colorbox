@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+      $(window).load(function(){
+          $('.loading-gif').fadeOut(1500);
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/colorbox.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+    rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+    <script>
+      $(function() {
+        $('#user-dashboard').mixitup();
+      });
+    </script>
+    <link href="css/screen-84f8b8221c.css" rel="stylesheet">
+    <script>
+      $(document).ready(function(){
+        $(".inline").colorbox({inline:true, width:"80%", height:"75%"});
+        $(".inline_birthday").colorbox({inline:true});
+        $(".voucher_trigger").colorbox({inline:true, width:"80%"});
+        $(".brand_recommendation_trigger").colorbox({inline:true, width:"80%"});
+        $(".contribution_trigger").colorbox({inline:true, width:"80%"});
+        $(".event-iframe1").colorbox({iframe:true, width:"80%", height:"80%"});
+      });
+    </script>
+    <script type="text/javascript">
+      // $(document).ready(function(){
+      //   // $.colorbox.resize();
+      // });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.voucher-slider').bxSlider({slideWidth: 105,minSlides: 2,maxSlides: 3,moveSlides: 1,slideMargin: 220});
+        $('.brand-slider').bxSlider({slideWidth: 205,minSlides: 1,maxSlides: 3,moveSlides: 1,slideMargin: 10});
+      });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('input.iChk').iCheck({checkboxClass: 'icheckbox_polaris',radioClass: 'iradio_polaris',increaseArea: '-10%' // optional
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.share-this').popover({ 
+          html : true, 
+          trigger:'click',
+          content: function() {
+            return $('#share-this-wrapper').html();
+          }
+        });
+        $('.share-this').popover().click(function () {
+          setTimeout(function () {
+              $('.share-this').popover('hide');
+          }, 3500);
+        });
+        $('.chip-alert').popover({trigger: 'click','placement': 'bottom'});
+        $('.chip-alert').popover().click(function () {
+          setTimeout(function () {
+              $('.chip-alert').popover('hide');
+          }, 800);
+        });
+      });
+    </script>
+   
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.chkContr').click(function () {
+        $(".txtContr").toggle(this.checked);
+      });
+    });
+  </script> 
+  </head>
+  <body>
+
+    <!-- DO NOT include this script. there's a bug with the facebok api. we are working on this -->
+     <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '204592589606556',
+          status     : true,
+          xfbml      : true
+        });
+      };
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header" align="center" style="float:none;">
+        <a class="navbar-brand" style="float:none;" href="#"><img src="img/logo.jpg"></a>
+        <div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="no-bg-color">
+              <a id="notifier" href="#" class="dropdown-toggle" data-toggle="dropdown">
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <img class="dp-dropdown" src="img/friend5.png">
+                  <div align="left">
+                    <b>Sarah</b>
+                    has recommended a gift for
+                    <b>Aaliya's</b>
+                    B'Day
+                  </div>
+                  <button class="btn btn-primary btn-sm btn-dropdown" type="button">
+                    Chip-in
+                  </button>
+                </li>
+                <li class="divider">
+                </li>
+                <li>
+                  <img class="dp-dropdown" src="img/friend2.png">
+                  <div align="left">
+                    <b>Tom</b>
+                    has recommended a gift for
+                    <b>you</b>
+                  </div>
+                  <button class="btn btn-primary btn-sm btn-dropdown" type="button">
+                    Chip-in
+                  </button>
+                </li>
+                <li class="divider">
+                </li>
+                <li>
+                  <img class="dp-dropdown" src="img/friend4.png">
+                  <div align="left">
+                    <b>Jim</b>
+                    has pledged support for
+                    <b>Cycling 2000</b>
+                  </div>
+                  <button class="btn btn-primary btn-sm btn-dropdown" type="button">
+                    Chip-in
+                  </button>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a id="setting" href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+              <ul class="dropdown-menu dropdown-menu2">
+                <li>
+                  <a href="#">Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="user-dashboard" class="container container-dashboard no-padding">
+      <div class="navbar-dashboard">
+        <h2 class="h-dash">
+          My <span>O<sub>z</sub>SUM</span> Events
+        </h2>
+        <!-- this button navigation menu is hidden in mobile and replaced with
+        hyperlinks below-->
+        <div class="nav-btn-dashboard hidden-xs">
+          <a href="#" class="btn active btn-default btn-all-events filter btn-lg" data-filter="chipped chip-invites chip-start">All</a>
+          <a href="#" class="btn btn-default btn-chipped filter btn-lg" data-filter="chipped">Chipped-in</a>
+          <a href="#" class="btn btn-default btn-chip-invites filter btn-lg" data-filter="chip-invites">Chip-invites</a>
+          <a href="#" class="btn btn-default btn-start-chip filter btn-lg" data-filter="chip-start">Start a Chip-in</a>
+        </div>
+        <!-- navigation menu for mobiles -->
+        <div class="nav-link-dashboard visible-xs">
+          <a class="filter" data-filter="chipped chip-invites chip-start" href="#">All</a>
+          <a class="filter" data-filter="chipped" href="#">Chipped-in</a>
+          <a class="filter" data-filter="chip-invites" href="#">Chip-invites</a>
+          <a class="filter" data-filter="chip-start" href="#">Start a Chip-in</a>
+        </div>
+      </div>
+      <div class="dashboard-content container no-margin-padding">
+        <div>
+          <div id="well-dashboard" class="well well-lg"><p>Spark a movement, cause a change or just revel in a celebration
+            <br>life is O<sub>z</sub>SUM when your crowd gets together!</p>
+            <h3 class="font-bold">
+              Watch out for more O<sub>z</sub>SUM features soon!
+            </h3></div>
+        </div>
+        <div class="loading-gif"></div>
+        <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12 mix chip-start">
+          <a class="inline" href="#pop_event" style="outline-style: none;">
+            <div class="tile-event-outer">
+              <div class="tile-event">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="event-img-holder">
+                        <img src="img/aap.png">
+                      </td>
+                      <td>
+                        <div class="box-event-type event-birthday">
+                          BIRTHDAY
+                        </div>
+                        <span class="event-name">Dolly Sinha</span>
+                        <span class="event-date">February 21, 2014</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table class="table-days-left">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div class="number-count font-orange">
+                                  03
+                                </div>
+                              </td>
+                              <td class="days-left">
+                                Days Left
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td>
+                        <span class="btn-gift-shadow">
+                          <a href="#" class="btn btn-lg btn-primary">Gift</a>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="event-patch patch-start-chip">
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- this is the pop up window for community events -->
+        <div style='display:none'>
+          <div id='pop_event' class="event_popup">
+            
+            <div class="pop_event_holder">
+                    <div class="tile-event-outer pop-event-outer">
+                      <div class="tile-event tile-event-pop">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td class="event-img-holder">
+                                <img src="img/bale.png">
+                              </td>
+                              <td>
+                                <div class="box-event-type event-fundraiser">
+                                  FUNDRAISER
+                                </div>
+                                <span class="event-name">Thomas Kallarackal's Works Thomas Kallarackal's Works</span><br>
+                                <span class="event-date">March 02, 2014</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <table class="table-days-left">
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <div class="number-count font-orange">
+                                          11
+                                        </div>
+                                      </td>
+                                      <td class="days-left">
+                                        Days Left
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                              <td>
+                                <table class="table-friends-chipped">
+                                  <tbody>
+                                    <tr>
+                                      <td class="img-viewport-medium">
+                                        <img src="img/bale.png">
+                                      </td>
+                                      <td style="text-align:left;">
+                                        <span class="event-name">John Turturro</span> invited you
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="patch-pop-event">
+                        <span class="btn-shadow"><a type="button" class="btn btn-primary btn-lg chip-alert" data-container="body" data-toggle="popover" data-placement="bottom" data-content="You will be redirected to the partner's website for completing the transaction. For all payment queries, please contact the partner's support numbers and email.">Chip-in</a></span>
+                        
+                        <button id="btn-dismiss" type="button" class="btn btn-default btn-def btn-lg" onclick='parent.$.colorbox.close(); return false;'>Dismiss</button>
+                      </div>
+                      <div class="pop-event-friends-list">
+                        <p class="font-gray"><span class="font-black font-bold">10</span> <span class="font-gray">Friends Chipped In</span></p>
+                        <div class="img-small-viewport">
+                          <img src="img/bale.png">
+                          <img src="img/bale.png">
+                          <img src="img/bale.png">
+                          <img src="img/bale.png">
+                          <img src="img/bale.png">
+                          <img src="img/bale.png">
+                          <img src="img/bale.png">
+                          <img src="img/bale.png">
+                          <img src="img/bale.png">
+                          <img src="img/bale.png">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="pop_event_info">
+                      <div style="position:absolute;top:0px;right:0px;"><a href="#" onclick='parent.$.colorbox.close(); return false;'>X</a></div>
+                      <span class="font-bold">Vodafone</span>
+                      <h3 class="pop_event_title">Cycling Marathon 2014, Bangalore</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                      <h4>Passion Ride <span class="font-bold">40 km | </span>Green Ride <span class="font-bold">20 km | </span>Fun Ride <span class="font-bold">10 km</span></h4>
+                      
+                      <div class="event_more_info" style="display:none;">
+                        <div class="video_holder">
+
+                          <!-- for a video from youtube or vimeo.... -->
+                          <!-- <iframe src=""></iframe> -->
+
+                          <!-- for a video from local source -->
+                          <video controls>
+
+                            <source src="<include your video location here>" type="video/mp4">
+                            
+                            <object data="<include your video location here>" width="320" height="240">
+                              <embed width="320" height="240" src="<include your video location here>">
+                            </object>
+                            
+                          </video>
+                        </div>
+                        <div>
+                          <h3 style="display:inline-block;">Contact</h3>
+                          <p>
+                            <span>Email: <a href="mailto:hi@abc.com">hi@abc.com</a></span><br>
+                            <span>Mobile: +91 1924849484</span><br>
+                            <span><a href="#" target="_blank">www.ozsum.com</a></span>
+                          </p>
+                        </div>
+                      </div>
+                      <div>
+                        <iframe src="1.html" width="100%" style="border:none;" scrolling="yes"></iframe>
+                        <div>
+                          <input type="checkbox" class="chkContr" name="">
+                          <label for="chkContr" style="color:#000;">I have already contributed</label>
+                          <span class="txtContr" style="display:none;color:#000;font-weight:bold;">
+                            using <input type="text" id="txtbxContr" >
+                          </span>
+                        </div>
+                        
+                        
+                        <a href="1.html" class="btn btn-primary event-iframe1">Next</a>
+                      </div>
+
+                    </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12 mix chip-invites">
+          <div class="tile-event-outer">
+            <div class="tile-event">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="event-img-holder">
+                      <img src="img/bale.png">
+                    </td>
+                    <td>
+                      <div class="box-event-type event-fundraiser">
+                        FUNDRAISER
+                      </div>
+                      <span class="event-name">Thomas Kallarackal's Works Thomas Kallarackal's Works</span>
+                      <span class="event-date">March 02, 2014</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table class="table-days-left">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="number-count font-orange">
+                                11
+                              </div>
+                            </td>
+                            <td class="days-left">
+                              Days Left
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td>
+                      <span class="btn-gift-shadow">
+                        <a href="#" class="btn btn-lg btn-primary">Gift</a>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="event-patch patch-chip-invites">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12 mix chipped">
+          <div class="tile-event-outer">
+            <div class="tile-event">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="event-img-holder">
+                      <img src="img/aap.png">
+                    </td>
+                    <td>
+                      <div class="box-event-type event-birthday">
+                        BIRTHDAY
+                      </div>
+                      <span class="event-name">Aam Aadmi Party (AAP)</span>
+                      <span class="event-date">March 03, 2014</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table class="table-days-left">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="number-count font-orange">
+                                12
+                              </div>
+                            </td>
+                            <td class="days-left">
+                              Days Left
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td>
+                      <span class="btn-gift-shadow">
+                        <a href="#" class="btn btn-lg btn-primary">Gift</a>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="event-patch patch-chipped">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12 mix chip-invites">
+          <div class="tile-event-outer">
+            <div class="tile-event">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="event-img-holder">
+                      <img src="img/bale.png">
+                    </td>
+                    <td>
+                      <div class="box-event-type event-birthday">
+                        BIRTHDAY
+                      </div>
+                      <span class="event-name">K2K Cycling in 20 Days</span>
+                      <span class="event-date">March 14, 2014</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table class="table-days-left">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="number-count font-orange">
+                                23
+                              </div>
+                            </td>
+                            <td class="days-left">
+                              Days Left
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td>
+                      <span class="btn-gift-shadow">
+                        <a href="#" class="btn btn-lg btn-primary">Gift</a>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="event-patch patch-chip-invites">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12 mix chip-invites">
+          <a class="inline_birthday" href="#pop_event_birthday">
+            <div class="tile-event-outer">
+              <div class="tile-event">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="event-img-holder">
+                        <img src="img/bale.png">
+                      </td>
+                      <td>
+                        <div class="box-event-type event-birthday">
+                          BIRTHDAY
+                        </div>
+                        <span class="event-name">Christian Bale</span>
+                        <span class="event-date">March 24, 2014</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table class="table-days-left">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div class="number-count font-orange">
+                                  33
+                                </div>
+                              </td>
+                              <td class="days-left">
+                                Days Left
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td>
+                        <span class="btn-gift-shadow">
+                          <a href="#" class="btn btn-lg btn-primary">Gift</a>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="event-patch patch-chip-invites">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div style='display:none'>
+          <div id='pop_event_birthday' class="event_popup">
+            <div class="pop_event_holder">
+              <div class="tile-event-outer pop-event-outer pop-no-margin">
+                <div class="tile-event tile-event-pop">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td class="event-img-holder">
+                          <img src="img/bale.png">
+                        </td>
+                        <td>
+                          <div class="box-event-type event-fundraiser">
+                            FUNDRAISER
+                          </div>
+                          <span class="event-name">Muslim Bale</span>
+                          <span class="event-date">March 02, 2014</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table class="table-days-left">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <div class="number-count font-orange">
+                                    11
+                                  </div>
+                                </td>
+                                <td class="days-left">
+                                  Days Left
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td>
+                          <table class="table-friends-chipped">
+                            <tbody>
+                              <tr>
+                                <td class="img-viewport-medium">
+                                  <img src="img/bale.png">
+                                </td>
+                                <td style="text-align:left;">
+                                  <span class="event-name">John Turturro</span> invited you
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="patch-pop-event">
+                  <span class="btn-shadow"><button href="#pop_birthday_voucher" type="button" class="voucher_trigger btn btn-primary btn-lg">Chip-in</button></span>
+                  
+                  <button id="btn-dismiss" type="button" class="btn btn-default btn-def btn-lg" onclick='parent.$.colorbox.close(); return false;'>Dismiss</button>
+                </div>
+                <div class="pop-event-friends-list">
+                  <p class="font-gray"><span class="font-black font-bold">10</span> <span class="font-gray">Friends Chipped In</span></p>
+                  <div class="img-small-viewport">
+                    <img src="img/bale.png">
+                    <img src="img/bale.png">
+                    <img src="img/bale.png">
+                    <img src="img/bale.png">
+                    <img src="img/bale.png">
+                    <img src="img/bale.png">
+                    <img src="img/bale.png">
+                    <img src="img/bale.png">
+                    <img src="img/bale.png">
+                    <img src="img/bale.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div style='display:none'>
+          <div id="pop_birthday_voucher" class="pop_birthday_flow">
+            <div class="tile-event-outer pop-event-outer">
+              <div class="tile-event tile-event-pop" style="height:150px;">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="event-img-holder">
+                        <img src="img/bale.png">
+                      </td>
+                      <td>
+                        <div class="box-event-type event-fundraiser">
+                          FUNDRAISER
+                        </div>
+                        <span class="event-name">Hindu Bale</span>
+                        <span class="event-date">March 02, 2014</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <hr>
+              <div class="pop_has_recommended">
+                <table>
+                  <tr>
+                    <td>
+                      <div class="has_recommended_img1 img-viewport-medium">
+                        <img src="img/bale.png">
+                      </div>
+                    </td>
+                    <td>
+                      <p class="p_recommended font-black pop-no-margin"><span class="font-bold font-black no-wrap">John Turturro</span><span> has recommended </span><br><span class="font-bold font-black">GIFT BIG</span></p>
+                    </td>
+                    <td>
+                      <div class="has_recommended_img2 img-viewport-medium">
+                        <img src="img/bale.png">
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              
+            </div>
+            <div class="pop_voucher_vault">
+              <h3 class="pop_event_title font-blue">Choose a gift from your voucher vault</h3>
+              <form>
+                <div class="voucher-slider">
+                  <div class="slide">
+                    <input id="voucher1" type="checkbox" checked>
+                    <label for="voucher1">
+                      <div class="voucher">
+                        <table>
+                          <tr>
+                            <td>
+                              <div class="img-viewport-voucher">
+                                <img src="img/brand.png">  
+                              </div>
+                            </td>
+                            <td>
+                              <span class="font-small font-black">NIKE <br>Rs.2,000</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="slide">
+                    <input id="voucher2" type="checkbox">
+                    <label for="voucher2">
+                      <div class="voucher">
+                        <table>
+                          <tr>
+                            <td>
+                              <div class="img-viewport-voucher">
+                                <img src="img/brand.png">  
+                              </div>
+                            </td>
+                            <td>
+                              <span class="font-small font-black">NIKE <br>Rs.2,000</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="slide">
+                    <input id="voucher3" type="checkbox" checked>
+                    <label for="voucher3">
+                      <div class="voucher">
+                        <table>
+                          <tr>
+                            <td>
+                              <div class="img-viewport-voucher">
+                                <img src="img/brand.png">  
+                              </div>
+                            </td>
+                            <td>
+                              <span class="font-small font-black">NIKE <br>Rs.2,000</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="slide">
+                    <input id="voucher4" type="checkbox" >
+                    <label for="voucher4">
+                      <div class="voucher">
+                        <table>
+                          <tr>
+                            <td>
+                              <div class="img-viewport-voucher">
+                                <img src="img/brand.png">  
+                              </div>
+                            </td>
+                            <td>
+                              <span class="font-small font-black">NIKE <br>Rs.2,000</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </form>
+              
+              <hr id="hr-voucher">
+              <div class="btn-grp">
+                <span class="btn-shadow" style="width:auto;"><button type="button" class="btn btn-primary btn-lg">Send Voucher</button></span>
+                <button type="button" href="#pop_birthday_recommendation" class="brand_recommendation_trigger btn btn-lg btn-default btn-def">or choose from brand catalogue</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div style='display:none'>
+          <div id="pop_birthday_recommendation" class="pop_birthday_flow">
+            <div class="tile-event-outer pop-event-outer">
+              <div class="tile-event tile-event-pop" style="height:150px;">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="event-img-holder">
+                        <img src="img/bale.png">
+                      </td>
+                      <td>
+                        <div class="box-event-type event-fundraiser">
+                          FUNDRAISER
+                        </div>
+                        <span class="event-name">Thomas Kallarackal's Works Thomas Kallarackal's Works</span>
+                        <span class="event-date">March 02, 2014</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <hr>
+              <div class="pop_has_recommended">
+                <table>
+                  <tr>
+                    <td>
+                      <div class="has_recommended_img1 img-viewport-medium">
+                        <img src="img/bale.png">
+                      </div>
+                    </td>
+                    <td>
+                      <p class="p_recommended font-black pop-no-margin"><span class="font-bold font-black no-wrap">John Turturro</span><span> has recommended </span><br><span class="font-bold font-black">GIFT BIG</span></p>
+                    </td>
+                    <td>
+                      <div class="has_recommended_img2 img-viewport-medium">
+                        <img src="img/bale.png">
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              
+            </div>
+            <div class="pop_voucher_vault">
+              <h3 class="pop_event_title font-blue">Recommend another gift for <span class="font-bold">Arnie Hammer</span></h3>
+              <form>
+                <div class="brand-slider">
+                  <div class="slide">
+                    <input id="brand1" type="checkbox" checked>
+                    <label for="brand1">
+                      <div class="brand">
+                        <table>
+                          <tr>
+                            <td>
+                              <div class="img-viewport-voucher">
+                                <img src="img/brand.png">  
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: center;">
+                              <span class="font-small font-black">NIKE</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="slide">
+                    <input id="brand2" type="checkbox">
+                    <label for="brand2">
+                      <div class="brand">
+                        <table>
+                          <tr>
+                            <td>
+                              <div class="img-viewport-voucher">
+                                <img src="img/brand.png">  
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: center;">
+                              <span class="font-small font-black">NIKE</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="slide">
+                    <input id="brand3" type="checkbox">
+                    <label for="brand3">
+                      <div class="brand">
+                        <table>
+                          <tr>
+                            <td>
+                              <div class="img-viewport-voucher">
+                                <img src="img/brand.png">  
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: center;">
+                              <span class="font-small font-black">NIKE</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="slide">
+                    <input id="brand4" type="checkbox" checked>
+                    <label for="brand4">
+                      <div class="brand">
+                        <table>
+                          <tr>
+                            <td>
+                              <div class="img-viewport-voucher">
+                                <img src="img/brand.png">  
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: center;">
+                              <span class="font-small font-black">NIKE</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="slide">
+                    <input id="brand5" type="checkbox" checked>
+                    <label for="brand5">
+                      <div class="brand">
+                        <table>
+                          <tr>
+                            <td>
+                              <div class="img-viewport-voucher">
+                                <img src="img/brand.png">  
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: center;">
+                              <span class="font-small font-black">NIKE</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="slide">
+                    <input id="brand6" type="checkbox">
+                    <label for="brand6">
+                      <div class="brand">
+                        <table>
+                          <tr>
+                            <td>
+                              <div class="img-viewport-voucher">
+                                <img src="img/brand.png">  
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: center;">
+                              <span class="font-small font-black">NIKE</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="slide">
+                    <input id="brand7" type="checkbox">
+                    <label for="brand7">
+                      <div class="brand">
+                        <table>
+                          <tr>
+                            <td>
+                              <div class="img-viewport-voucher">
+                                <img src="img/brand.png">  
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: center;">
+                              <span class="font-small font-black">NIKE</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </form>
+              
+
+              <hr id="hr-voucher">
+              <div class="btn-grp">
+                <button id="btn-recommend-dismiss" type="button" class="btn btn-lg btn-default btn-def" onclick='parent.$.colorbox.close(); return false;'>Dismiss</button>
+                <span class="btn-shadow" style="width:auto;"><button type="button" href="#pop_birthday_contribution" class="contribution_trigger btn btn-primary btn-lg">Recommend and advance</button></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div style='display:none'>
+          <div id="pop_birthday_contribution" class="pop_birthday_flow">
+            <div class="tile-event-outer pop-event-outer">
+              <div class="tile-event tile-event-pop" style="height:150px;">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="event-img-holder">
+                        <img src="img/bale.png">
+                      </td>
+                      <td>
+                        <div class="box-event-type event-fundraiser">
+                          FUNDRAISER
+                        </div>
+                        <span class="event-name">Thomas Kallarackal's Works Thomas Kallarackal's Works</span>
+                        <span class="event-date">March 02, 2014</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <hr>
+              <div class="pop_has_recommended">
+                <table>
+                  <tr>
+                    <td>
+                      <div class="has_recommended_img1 img-viewport-medium">
+                        <img src="img/bale.png">
+                      </div>
+                    </td>
+                    <td>
+                      <p class="p_recommended font-black pop-no-margin"><span class="font-bold font-black">You</span><span> have recommended </span><br><span class="font-bold font-black">APPLE</span></p>
+                    </td>
+                    <td>
+                      <div class="has_recommended_img2 img-viewport-medium">
+                        <img src="img/bale.png">
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              
+            </div>
+            <div class="pop_voucher_vault">
+              <form id="#form-contribute">
+                <h3 class="pop_event_title font-blue">Contribute and shout out!</h3>
+              <div class="div-amount">
+                <img src="img/rupee.png">
+                <input type="text" placeholder="Enter Amount">
+              </div>
+              <input class="contrib_placeholder" type="textarea" placeholder="Leave a message">
+              <div class="radio-btn font-gray">
+                <label class="radio">
+                  <input type="radio" name="iCheck">
+                  Notify Arnie Hammer's and your friends
+                </label>
+                <label class="radio">
+                  <input type="radio" name="iCheck" checked="">
+                  Keep my contribution anonymous
+                </label>
+              </div>
+              <hr>
+              <div class="btn-grp" style="top:0px;">
+                <button type="button" class="btn btn-lg btn-default btn-def">Not now</button>
+                <span class="btn-shadow" style="width:auto;"><button type="button" href="#" class="btn btn-primary btn-lg">Pay</button></span>
+              </div>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12 mix chipped">
+          <div class="tile-event-outer">
+            <div class="tile-event">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="event-img-holder">
+                      <img src="img/bale.png">
+                    </td>
+                    <td>
+                      <div class="box-event-type event-fundraiser">
+                        EVENT
+                      </div>
+                      <span class="event-name">Deadmau5</span>
+                      <span class="event-date">March 24, 2014</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table class="table-days-left">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="number-count font-orange">
+                                33
+                              </div>
+                            </td>
+                            <td class="days-left">
+                              Days Left
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td>
+                      <span class="btn-gift-shadow">
+                        <a href="#" class="btn btn-lg btn-primary">Gift</a>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="event-patch patch-chipped">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="pagination-holder" align="center">
+        <ul class="pagination">
+          <li>
+            <a href="#">&nbsp;&nbsp;</a>
+          </li>
+          <li>
+            <a href="#" class="pagination-active">1</a>
+          </li>
+          <li>
+            <a href="#">2</a>
+          </li>
+          <li>
+            <a href="#">3</a>
+          </li>
+          <li>
+            <a href="#">4</a>
+          </li>
+          <li>
+            <a href="#">5</a>
+          </li>
+          <li>
+            <a href="#">&nbsp;&nbsp;</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="footer" class="footerbar" align="center">
+      © ZenMesh Pvt. Ltd. 2014 &nbsp;&nbsp;&nbsp;
+      <a href="#">About</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="#">Privacy Policy</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="#">Terms of Use</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="#">Report an Issue</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="mailto:info@zenmesh.biz">Contact Us</a>
+      &nbsp;&nbsp;&nbsp;
+      <a class="share-this" style="cursor:pointer;">Share this</a>
+    </div>
+    <div id="share-this-wrapper" style="display: none">
+      <a href="http://facebook.com" target="_blank"><img width="20" src="img/fb.png"></a>
+
+
+      <!-- DO NOT include this script. there's a bug with the facebok api. we are working on this -->
+      <!-- <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-width="30" data-type="icon" style="left:-10px;"></div> -->      
+
+
+      <a href="#" target="_blank"><img width="20" src="img/twitter.png"></a>
+      <a href="#" target="_blank"><img width="20" src="img/google-plus.png"></a>
+    </div>
+    <br>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
+    </script>
+    <script src="js/screen-84f8b8221c.js"></script>
+    <style type="text/css">
+      /*.fb-share-button iframe{height: 30px !important;}*/
+    </style>
+  </body>
+</html>
